@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email & Password Validator</title>
+    <link rel="stylesheet" href="email.css">
+</head>
+<body>
+
+    <h2>Login Validator</h2>
+    
+    <form id="auth-form">
+        <div class="input-group">
+            <input type="text" id="email" placeholder="Enter your email">
+            <!-- This is hidden by default in CSS -->
+            <p id="emailError" class="error"></p> 
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Enter your password">
+            <!-- This is hidden by default in CSS -->
+            <p id="passwordError" class="error"></p> 
+        </div>
+
+        <button type="submit">Submit</button>
+
+        <!-- This is visible by default, but starts completely empty -->
+        <p id="resultMessage"></p> 
+    </form>
+
+    <script src="email.js"></script>
+</body>
+</html>

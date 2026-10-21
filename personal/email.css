@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    padding: 30px;
+}
+
+#auth-form {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    /* Hidden perfectly, waiting for JavaScript to set it to 'initial' */
+    display: none; 
+}
+
+#resultMessage {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
