@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Search Filter</title>
+    <link rel="stylesheet" href="filter.css">
+</head>
+<!-- The body background and alignment are handled in CSS -->
+<body>
+    <!-- Main wrapper using utility classes from the tutorial[cite: 5] -->
+    <div class="flex flex-col gap-10 items-center">
+        
+        <!-- Search input box[cite: 5] -->
+        <input id="search-input" class="search-box" type="text" placeholder="Search...">
+        
+        <!-- Container where JavaScript will inject the cards[cite: 5] -->
+        <div id="cards-container" class="flex gap-10 flex-wrap justify-center">
+            <!-- Cards will be generated here -->
+        </div>
+
+    </div>
+
+    <script src="filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Core Layout[cite: 6] */
+body {
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+}
+
+/* Custom CSS to mimic the utility classes in the HTML[cite: 5] */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.gap-10 { gap: 40px; }
+.items-center { align-items: center; }
+.flex-wrap { flex-wrap: wrap; }
+.justify-center { justify-content: center; }
+
+/* Styling for the search input[cite: 5] */
+.search-box {
+    padding: 20px;
+    border-radius: 8px;
+    outline: none;
+    background-color: #111;
+    color: #888;
+    border: 1px solid #333;
+    width: 300px;
+    font-size: 16px;
+}
+
+/* Card Styling[cite: 6] */
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Blurred Overlay Styling[cite: 7] */
+.blurred-layer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* Note: In JS, you will need to apply this background-image dynamically via inline styles! */
+    background-size: cover;
+    background-position: bottom;
+    filter: blur(10px);
+    z-index: 1;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+}
+
+/* Content Text Styling[cite: 8] */
+.content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 2;
+}
+
+.content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-top: 0;
+}
+
+.content p {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.4;
+    margin: 0;
+}
