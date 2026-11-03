@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App - Call Cards</title>
+    <link rel="stylesheet" href="note.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Left Action Controls -->
+        <div class="side-controls left-controls">
+            <button id="add-btn" class="icon-btn" title="Add Note">+</button>
+            <button id="up-btn" class="icon-btn" title="Previous Card">↑</button>
+            <button id="down-btn" class="icon-btn" title="Next Card">↓</button>
+        </div>
+
+        <!-- Center Card Container (Dynamically populated from localStorage) -->
+        <div id="cards-wrapper">
+            <!-- Cards will be dynamically injected here -->
+        </div>
+
+        <!-- Right Priority/Color Filter Controls -->
+        <div class="side-controls right-controls" id="filter-dots">
+            <span class="dot all-dot active" data-category="all" title="Show All"></span>
+            <span class="dot emergency-dot" data-category="emergency" title="Emergency"></span>
+            <span class="dot important-dot" data-category="important" title="Important"></span>
+            <span class="dot urgent-dot" data-category="urgent" title="Urgent"></span>
+            <span class="dot norush-dot" data-category="norush" title="No Rush"></span>
+        </div>
+
+    </div>
+
+    <!-- Modal Form for Creating New Note/Call -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-card">
+            <h2>New Call Note</h2>
+            
+            <form id="note-form">
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="text" id="img-url" placeholder="https://example.com/photo.jpg" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="full-name" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Home Town</label>
+                    <input type="text" id="home-town" placeholder="Enter home town" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Purpose</label>
+                    <input type="text" id="purpose" placeholder="e.g., Quick appointment note" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category Priority</label>
+                    <div class="category-options">
+                        <label class="chip emergency">
+                            <input type="radio" name="category" value="emergency" checked> Emergency
+                        </label>
+                        <label class="chip important">
+                            <input type="radio" name="category" value="important"> Important
+                        </label>
+                        <label class="chip urgent">
+                            <input type="radio" name="category" value="urgent"> Urgent
+                        </label>
+                        <label class="chip norush">
+                            <input type="radio" name="category" value="norush"> No Rush
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary-btn">Create Note</button>
+                <button type="button" id="close-modal-btn" class="btn danger-btn">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="note.js"></script>
+</body>
+</html>

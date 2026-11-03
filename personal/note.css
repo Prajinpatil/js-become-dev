@@ -1,0 +1,176 @@
+body {
+    background-color: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Side Button Controls */
+.side-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.08);
+    background-color: #f0f0f0;
+}
+
+/* Priority Filter Color Dots */
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 2px solid transparent;
+}
+
+.dot:hover, .dot.active {
+    transform: scale(1.25);
+    border-color: #000;
+}
+
+.all-dot { background-color: #000; }
+.emergency-dot { background-color: #e63946; }
+.important-dot { background-color: #f4a261; }
+.urgent-dot { background-color: #9d4edd; }
+.norush-dot { background-color: #2a9d8f; }
+
+/* Main Card Styling */
+#cards-wrapper {
+    position: relative;
+    width: 300px;
+    height: 180px; 
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border-top: 5px solid #000; 
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animations for Up/Down */
+}
+
+/* Dynamic Borders based on JS Class */
+.card.emergency { border-top-color: #e63946; }
+.card.important { border-top-color: #f4a261; }
+.card.urgent { border-top-color: #9d4edd; }
+.card.norush { border-top-color: #2a9d8f; }
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-header h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.form-group input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.category-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.chip {
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.primary-btn { background: #000; color: #fff; }
+.danger-btn { background: #ff4d4f; color: #fff; }
